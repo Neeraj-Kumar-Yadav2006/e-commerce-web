@@ -1,57 +1,287 @@
-# 🛒 E-Commerce Web Application (Frontend)
+# 🛒 ProShop MERN E-Commerce Application
 
-This is the frontend part of an E-Commerce Web Application built using React.js.
+A full-stack **MERN (MongoDB, Express, React, Node.js)** e-commerce application inspired by the ProShop project.
 
-## 🚀 Features
+The application includes **user authentication, product APIs, database integration, and API testing using Postman**.
 
-- 🏠 Home Page with product listing
-- 📄 Product details page
-- ⭐ Product rating component
-- 🛍️ Modern UI with Bootstrap styling
-- 📱 Responsive design
+⚠️ **Note:** Payment integration is **not implemented yet**. All other features are working.
 
-## 🛠️ Tech Stack
+---
 
-- React.js
-- JavaScript
-- Bootstrap
-- HTML5
-- CSS3
+# 🚀 Features
 
-## 📂 Project Structure
+### 👤 User Features
 
-frontend/
- ├── public/
- ├── src/
- │   ├── components/
- │   ├── screens/
- │   ├── assets/
- │   └── App.js
+* User registration
+* User login authentication
+* Logout functionality
+* Get user profile
+* Update user profile
 
-## ⚙️ Installation & Setup
+### 📦 Product Features
 
-1. Clone the repository:
-   git clone https://github.com/Neeraj-Kumar-Yadav2006/e-commerce-web.git
+* Get all products
+* Get single product
+* Product API endpoints
 
-2. Go inside frontend folder:
-   cd frontend
+### 🗄 Database
 
-3. Install dependencies:
-   npm install
+* MongoDB Atlas integration
+* Mongoose models
+* Database seeding support
 
-4. Start the development server:
-   npm start
+### 🔧 Backend
 
-The app will run on:
+* Node.js + Express
+* REST API
+* Authentication with JWT
+* Cookie Parser
+* Error handling middleware
+
+### 🎨 Frontend
+
+* React.js
+* Axios API calls
+* User authentication flow
+
+### 🧪 API Testing
+
+* Postman collection included
+* Environment variables supported
+
+---
+
+# 🏗 Tech Stack
+
+Frontend:
+
+* React
+* React Router
+* Axios
+
+Backend:
+
+* Node.js
+* Express.js
+* JWT Authentication
+
+Database:
+
+* MongoDB Atlas
+* Mongoose
+
+Tools:
+
+* Postman
+* Nodemon
+* Git & GitHub
+
+---
+
+# 📂 Project Structure
+
+```
+project-root
+│
+├── backend
+│   ├── config
+│   │   └── db.js
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   └── server.js
+│
+├── frontend
+│   ├── src
+│   └── public
+│
+├── data
+├── package.json
+└── README.md
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file inside the **backend folder**.
+
+Example:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+NODE_ENV=development
+```
+
+---
+
+# ▶️ How To Run The Project
+
+### 1️⃣ Clone the repository
+
+```
+git clone https://github.com/yourusername/proshop.git
+```
+
+```
+cd proshop
+```
+
+---
+
+### 2️⃣ Install dependencies
+
+Backend:
+
+```
+cd backend
+npm install
+```
+
+Frontend:
+
+```
+cd ../frontend
+npm install
+```
+
+---
+
+### 3️⃣ Run Backend Server
+
+```
+cd backend
+npm run server
+```
+
+Server will start on:
+
+```
+http://localhost:5000
+```
+
+---
+
+### 4️⃣ Run Frontend
+
+```
+cd frontend
+npm start
+```
+
+Frontend will run on:
+
+```
 http://localhost:3000
+```
 
-## 📌 Future Improvements
+---
 
-- Add cart functionality
-- Add user authentication
-- Connect with backend API
-- Payment integration
+# 🔌 API Endpoints
 
-## 👨‍💻 Author
+### Products
 
-Neeraj Kumar Yadav
+Get all products
+
+```
+GET /api/products
+```
+
+Get single product
+
+```
+GET /api/products/:id
+```
+
+---
+
+### Users
+
+Register user
+
+```
+POST /api/users
+```
+
+Login user
+
+```
+POST /api/users/auth
+```
+
+Logout user
+
+```
+POST /api/users/logout
+```
+
+Get user profile
+
+```
+GET /api/users/profile
+```
+
+Update user profile
+
+```
+PUT /api/users/profile
+```
+
+---
+
+# 🧪 Postman Testing
+
+Base URL:
+
+```
+http://localhost:5000/api
+```
+
+Example request:
+
+```
+GET /products
+POST /users
+POST /users/auth
+```
+
+Body example for registration:
+
+```
+{
+ "name": "Test User",
+ "email": "test@example.com",
+ "password": "123456"
+}
+```
+
+---
+
+# 🗄 MongoDB
+
+The application connects to **MongoDB Atlas** using Mongoose.
+
+Example connection:
+
+```
+MongoDB Connected
+```
+
+Make sure your **MongoDB URI is added in `.env`**.
+
+---
+
+
+
+# 👨‍💻 Author
+
+Developed by **Nk**
+
+---
+
+# 📜 License
+
+This project is for **learning and educational purposes**.
