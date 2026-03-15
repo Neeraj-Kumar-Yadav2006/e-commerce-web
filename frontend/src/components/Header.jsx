@@ -27,8 +27,8 @@ const Header =()=>{
                 <Container>
                     <LinkContainer to='/'>
                     <Navbar.Brand >
-                    <img src={logo} alt="ProShop"/>
-                    Proshop
+                    <img src={logo} alt="Shopping"/>
+                    Shopping Start
                     </Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
