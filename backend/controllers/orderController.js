@@ -8,12 +8,27 @@ import { calcPrices } from '../utils/calcPrices.js';
 // @route   POST /api/orders
 // @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
-  const { orderItems, shippingAddress, paymentMethod } = req.body;
+   console.log('BODY =', req.body);
+  const { orderItems, shippingAddress, paymentMethod,itemsPrice,taxPrice,shippingPrice,totalPrice, } = req.body;
 
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error('No order items');
   } else {
+    // const order=new Order({
+    //   orderItems:orderItems.map((x)=>({
+    //     ...x,
+    //     product:x._id,
+    //     _id:undefined
+    //   })),
+    //   user:req.user._id,
+    //   shippingAddress,
+    //   paymentMethod,
+    //   itemsPrice,
+    //   taxPrice,
+    //   shippingPrice,
+    //   totalPrice,
+    // });
     // NOTE: here we must assume that the prices from our client are incorrect.
     // We must only trust the price of the item as it exists in
     // our DB. This prevents a user paying whatever they want by hacking our client
@@ -23,6 +38,8 @@ const addOrderItems = asyncHandler(async (req, res) => {
     const itemsFromDB = await Product.find({
       _id: { $in: orderItems.map((x) => x._id) },
     });
+    console.log('orderItems:', orderItems);
+    console.log('itemsFromDB:', itemsFromDB);
 
     // map over the order items and use the price from our items from database
     const dbOrderItems = orderItems.map((itemFromClient) => {
