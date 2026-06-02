@@ -4,7 +4,7 @@ A full-stack **MERN (MongoDB, Express, React, Node.js)** e-commerce application 
 
 The application includes **user authentication, product APIs, database integration, and API testing using Postman**.
 
-⚠️ **Note:** Payment integration is **not implemented yet**. All other features are working.
+ **Note:** Payment integration is also complete . All  features are working.
 
 ---
 
