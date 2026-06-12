@@ -2,16 +2,24 @@
 import {Row,Col} from 'react-bootstrap'
 import Product from "../components/Product"
 import Loader from '../components/Loader';
+import { useParams } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Message from '../components/Message';
+import Meta from '../components/Meta';
 import { useGetProductsQuery } from '../slices/productsApiSlice';
 // import axios from 'axios';
 const HomeScreen=()=>{
-    const {data:products, isLoading,error}=useGetProductsQuery(); 
+    const {keyword}=useParams();
+    const {data:products, isLoading,error}=useGetProductsQuery({keyword}); 
     return (
         <>
+           {keyword && <Link to='/' className='btn btn-light'> Go Back</Link>}
            {isLoading ? (
                <Loader/>
-           ):error ? (<Message variant='danger'>{error?.data?.message || error.error}</Message>):(<>
+           ):error ? (<Message variant='danger'>{error?.data?.message || error.error}</Message>
+
+           ):(<>
+            <Meta title='Shopping'/>
               <h1>Latest Products</h1>
             <Row>
              {products.map((product)=>(
